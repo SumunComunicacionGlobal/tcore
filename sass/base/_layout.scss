@@ -54,21 +54,30 @@ body .is-layout-flow {
     padding-right: var(--wp--style--root--padding-right);
 }
 
+.wp-block-cover,
+.wp-block-group {
+
+    &.alignfull {
+        padding-top: var(--wp--custom--layout--gap-x-large);
+        padding-bottom: var(--wp--custom--layout--gap-x-large);
+    }
+}
+
 body {
     --wp--style--root--padding-right: 1rem;
     --wp--style--root--padding-left: 1rem;
 
 
     #masthead {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        transition: all 0.3s ease;
-        background: linear-gradient(180deg, var(--wp--preset--color--neutral-100) 0, transparent 136px, transparent 272px);
-        background-size: 1px 272px;
-        background-position: 0 -120px;
+        // position: sticky;
+        // top: 0;
+        // left: 0;
+        // right: 0;
+        // z-index: 1000;
+        // transition: all 0.3s ease;
+        // background: linear-gradient(180deg, var(--wp--preset--color--neutral-100) 0, transparent 136px, transparent 272px);
+        // background-size: 1px 272px;
+        // background-position: 0 -120px;
 
         .wp-block-navigation__responsive-container {
             
@@ -76,37 +85,36 @@ body {
                 background-color: transparent !important;
             }
 
-            &.is-menu-open {
-                background-color: rgba(255, 255, 255, 0.8);
-                backdrop-filter: blur(10px);
-                padding: 0 var(--wp--custom--layout--gap) var(--wp--preset--spacing--10) !important;
+            // &.is-menu-open {
+            //     background-color: rgba(255, 255, 255, 0.8);
+            //     backdrop-filter: blur(10px);
 
-                top: calc( var(--wp--preset--spacing--30) + 56px + var(--wp--preset--spacing--20));
-                left: var(--wp--custom--layout--gap);
-                right: var(--wp--custom--layout--gap);
-                bottom: var(--wp--custom--layout--gap);
-                border-radius: var(--wp--custom--border-radius--1);
-
-                .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
-                    align-items: center;
-                }
-            }
+            //     .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
+            //         width: 100%;
+            //         align-items: center;
+            //     }
+            // }
         }
         
-        @media ($below-tablet) {
-            .wp-block-button__link {
-                text-indent: -9999px;
-                gap: 0;
+        @media ($below-laptop) {
+            padding: var(--wp--preset--spacing--10);
+
+            nav {
+                order: 1;
             }
 
-            .wp-block-group > .wp-block-group > .wp-block-group {
-                padding-left: 1rem;
-                padding-right: 1rem;
+            .wp-block-buttons {
+                flex-grow: 1;
+                justify-content: flex-end;
+            }
 
-                &:first-child {
-                    padding-left: .5rem;
-                    padding-right: .5rem;
-                }
+        }
+
+        @media ($below-mobile-xs) {
+            .wp-block-button__link {
+                font-size: var(--wp--preset--font-size--small);
+                padding-left: var(--wp--preset--spacing--10);
+                padding-right: var(--wp--preset--spacing--10);
             }
         }
 
@@ -134,15 +142,16 @@ body {
     }
 }
 
-.is-layout-constrained .wp-block-cover,
-.is-layout-constrained .wp-block-video video,
-.wp-block-group.has-background {
-    border-radius: var(--wp--custom--border-radius--1)
+@media ($above-mobile) {
+    
+    .order-1-mobile {
+        order: 1;
+    }
+
 }
 
 @media ($above-tablet) {
     body {
-        padding: 2rem;
         --wp--style--root--padding-right: 4rem;
         --wp--style--root--padding-left: 4rem;
     
@@ -158,9 +167,10 @@ body {
         }
     }  
 
-    .wp-block-columns {
-        gap: var(--wp--custom--layout--gap-x-large);
+    .order-1-tablet {
+        order: 1;
     }
+
 }
 
 #colophon {
@@ -180,6 +190,18 @@ body {
             justify-content: center;
         }
         
+    }
+
+}
+
+.is-style-oversized-left {
+
+    width: calc(100% + 40px);
+    margin-left: -40px !important;
+    
+    @media ($above-desktop) {
+        width: calc(100% + 80px);
+        margin-left: -80px !important;
     }
 
 }

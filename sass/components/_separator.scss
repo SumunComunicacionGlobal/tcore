@@ -1,0 +1,26 @@
+.wp-block-separator {
+    margin-block-start: var(--wp--preset--spacing--40);
+    margin-block-end: var(--wp--preset--spacing--40);
+    border-bottom: 1px solid var(--wp--preset--color--neutral-30);
+
+    &.is-style-wide {
+        position: relative;
+        overflow: visible;
+        padding-left: 2rem;
+        
+        &:before {
+            content: "";
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: var(--wp--preset--color--primary);
+            position: absolute;
+            top: -.75rem;
+            left: 0;
+            mask-image: url('./assets/icons/icono-mas.svg');
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            mask-position: center;
+        }
+    }
+}

@@ -18,7 +18,7 @@
 .infinite-scroll {
 	/**** Settings */
 	--marquee-duration: 20s; /*##ms, ##s*/
-	--marquee-gap: var(--wp--preset--spacing--xl); /* can be any spacing */
+	--marquee-gap: var(--wp--preset--spacing--40); /* can be any spacing */
  	user-select: none; /* none, auto*/
 	/* end */
 	overflow: hidden;

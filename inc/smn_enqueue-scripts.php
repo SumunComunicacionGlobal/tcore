@@ -3,20 +3,22 @@
  * Enqueue scripts
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
  function smn_scripts() {
 
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'sumun-js', get_template_directory_uri() . '/assets/js/sumun.js', array(), $theme_version, true );
-	wp_enqueue_script( 'smnsumun-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'smn-js', get_template_directory_uri() . '/assets/js/smn.min.js', array(), $theme_version, true );
 
-	// No se carga si el carrusel está en un bloque sincronizado
-	// if ( has_block( 'cb/carousel' ) ) {
-        wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/assets/slick/slick.min.css' );
-        wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/assets/slick/slick.min.js', array('jquery'), null, true );
-        wp_enqueue_script( 'slick-init-js', get_template_directory_uri() . '/assets/slick/init.js', array('jquery'), null, true );
-    // }
+	if ( is_singular() && has_block( 'cb/carousel' ) ) {
+		wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/assets/js/slick/slick.min.css', array(), $theme_version );
+		wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/assets/js/slick/slick.min.js', array( 'jquery' ), $theme_version, true );
+		wp_enqueue_script( 'slick-init-js', get_template_directory_uri() . '/assets/js/slick/init.js', array( 'jquery', 'slick-js' ), $theme_version, true );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'smn_scripts' );
@@ -52,19 +54,4 @@ function theme_gsap_script(){
 // add_action( 'wp_enqueue_scripts', 'theme_gsap_script' );
 
 
-/**
- * Enqueue scripts and styles.
- 
-function smn_hybrid_scripts() {
-	wp_enqueue_style( 'sumun-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'sumun-style', 'rtl', 'replace' );
-
-	
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'smn_hybrid_scripts' );
-*/
 

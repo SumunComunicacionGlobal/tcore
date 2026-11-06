@@ -2,40 +2,77 @@
 	text-decoration: none;
 }
 
-[class*="has-heading-"][class*="-font-size"] {
+[class*="has-heading-"][class*="-font-size"],
+.has-caption-font-size,
+.has-small-font-size {
     line-height: var(--wp--custom--line-height--headings);
-    font-family: var(--wp--preset--font-family--font-heading);
-    font-weight: bold;
+}
+.has-caption-font-size {
+    font-family: var(--wp--preset--font-family--font-mono);
+}
+.has-heading-3-font-size,
+.has-heading-4-font-size {
+    font-weight: 700;
+}
+
+.has-heading-6-font-size {
+    font-weight: 900;
 }
 
 .has-medium-font-size {
     line-height: var(--wp--custom--line-height--headings);
 }
 
-.has-display-font-size,
-.has-heading-1-font-size {
+.has-display-font-size {
     line-height: var(--wp--custom--line-height--tiny) !important;
 }
 
 .has-white-background-color {
-    color: var(--wp--preset--color--background);
+    color: var(--wp--preset--color--neutral-white);
 }
 
-.wp-block-group.is-style-pill-paragraph {
+.wp-block-group.is-style-badge {
     gap: .5em;
 
     &.is-vertical {
         gap: 1em;
     }
 }
-p.is-style-pill-paragraph,
-.wp-block-group.is-style-pill-paragraph p {
+p.is-style-badge,
+.wp-block-group.is-style-badge p {
+    font-family: var(--wp--preset--font-family--font-mono);
+    font-size: var(--wp--preset--font-size--caption);
     border: 1px solid;
-    border-radius: 1000px;
-    padding: .25em var(--wp--preset--spacing--10);
+    border-radius: var(--wp--custom--border-radius--rounded);
+    padding: var(--wp--preset--spacing--025) var(--wp--preset--spacing--10);
     width: fit-content;
 }
 
 label {
     font-size: var(--wp--preset--font-size--small);
+    font-family: var(--wp--preset--font-family--font-mono);
+}
+
+.is-style-eyebrow {
+    font-size: var(--wp--preset--font-size--caption);
+    font-family: var(--wp--preset--font-family--font-mono);
+    text-transform: uppercase;
+    line-height: var(--wp--custom--line-height--tiny);
+}
+
+.is-style-eyebrow,
+.is-style-border-left {
+    position: relative;
+    padding-left: 1em;
+
+    &:before {
+        content: "";
+        width: 4px;
+        height: 1em;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: var(--wp--preset--color--primary);
+    }
 }

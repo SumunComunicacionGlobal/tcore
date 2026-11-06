@@ -1,5 +1,5 @@
 .wp-block-search__inside-wrapper {
-	border-radius: var(--wp--custom--border-radius--md);
+	border-radius: var(--wp--custom--border-radius--05);
 	padding: 0;
 	
 	input[type="search"] {
@@ -15,7 +15,7 @@
 		.wp-block-search__button {
 
 			&.wp-element-button {
-				background-color: var(--wp--preset--color--white);
+				background-color: var(--wp--preset--color--neutral-white);
 				padding: calc(0.5rem + 4px);
 			}
 	

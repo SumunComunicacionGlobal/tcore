@@ -1,53 +1,51 @@
-.rank-math-list {
-    display: grid;
-    gap: 0.5rem;
+:root {
+    --inbrmfa-border-color: var(--wp--preset--color--neutral-30);
+    --inbrmfa-border-width: 1px;
+    --inbrmfa-border-style: solid;
+    --inbrmfa-border-radius: var(--wp--custom--border-radius--05);
+    --inbrmfa-question-font-size: var(--wp--preset--font-size--body);
+    --inbrmfa-question-color: var(--wp--preset--color--foreground);
+    --inbrmfa-question-bg-color: rgba(255,255,255,.5);
+    --inbrmfa-question-text-align: left;
+    --inbrmfa-answer-font-size: var(--wp--preset--font-size--body);
+    --inbrmfa-answer-color: var(--wp--preset--color--text-medium);
+    --inbrmfa-answer-bg-color: rgba(255,255,255,.5);
+    --inbrmfa-answer-text-align: left;
+}
+
+#rank-math-faq .rank-math-list {
 
     .rank-math-list-item {
-        border-bottom: 1px solid;
+        margin-bottom: var(--wp--preset--spacing--10);
+
+        .rank-math-question,
+        .rank-math-answer {
+            padding: var(--wp--preset--spacing--20);
+        }
 
         .rank-math-question {
-            position: relative;
-            width: calc(100% - 1.5rem);
-            margin-bottom: 1rem;
-            
-            &:hover {
-                cursor: pointer;
-            }
+            padding-right: var(--wp--preset--spacing--40);
             
             &::after {
-                content: url(./assets/icons/chevron-down.svg);
-                right: -1.5rem;
-                top: 0;
-                padding-left: 1rem;
-                position: absolute;
                 height: 1.5rem;
                 width: 1.5rem;
+                background-color: var(--wp--preset--color--primary);
+                border-radius: var(--wp--custom--border-radius--rounded);
+                color: var(--wp--preset--color--neutral-white);
+                line-height: 1.15;
+                right: var(--wp--preset--spacing--10);
             }
         }
 
         .rank-math-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height .4s ease-in-out;
+
+            > *:first-child {
+                margin-block-start: 0;
+            }
             
         }
 
-        &.active {
-
-            .rank-math-answer {
-                max-height: 100vh;
-            }
-    
-            .rank-math-question::after {
-                content: url(./assets/icons/chevron-up.svg);
-            }
-        }
     }
     
-    h2.rank-math-question  {
-        font-size: var(--wp--preset--font-size--body);
-        font-family: var(--wp--preset--font-family--font-main);
-        font-weight: 700;
-    }
 }
 

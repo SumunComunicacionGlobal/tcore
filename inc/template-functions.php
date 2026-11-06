@@ -2,8 +2,12 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package sumun
+ * @package smn
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( ! function_exists( 'smn_support' ) ) :
 

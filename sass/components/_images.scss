@@ -4,6 +4,10 @@ img {
     display: block;
 }
 
+.wp-block-image:not(.is-style-no-radius) img {
+    border-radius: var(--wp--custom--border-radius--1);
+}
+
 .img-white img,
 img.img-white {
     filter: brightness(0) invert(1);

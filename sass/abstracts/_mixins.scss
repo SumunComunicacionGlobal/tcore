@@ -1,6 +1,6 @@
 // Extra Small (mobile)
-$below-mobile-xs: "max-width:480px";
-$above-mobile-xs: "min-width:481px";
+$below-mobile-xs: "max-width:599px";
+$above-mobile-xs: "min-width:600px";
 
 // Small (tablet)
 $below-mobile: "max-width:781px"; // de 0 a 781px de ancho se muestra
@@ -11,8 +11,8 @@ $below-tablet: "max-width:991px";
 $above-tablet: "min-width:992px";
 
 // Large (content max-width)
-$below-laptop: "max-width:1120px";
-$above-laptop: "min-width:1121px";
+$below-laptop: "max-width:1079px";
+$above-laptop: "min-width:1080px";
 
 // Extra Large (content max-width)
 $below-desktop: "max-width:1439px";

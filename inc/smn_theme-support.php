@@ -4,12 +4,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package sumun
+ * @package smn
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
 /**
@@ -24,9 +23,9 @@ function smn_hybrid_setup() {
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on sumun, use a find and replace
-		* to change 'sumun' to the name of your theme in all the template files.
+		* to change 'tefipro' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'sumun', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'tefipro', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -53,7 +52,7 @@ function smn_hybrid_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'primary-menu' => esc_html__( 'Primary', 'sumun' ),
+			'primary-menu' => esc_html__( 'Primary', 'tefipro' ),
 		)
 	);
 

@@ -1,0 +1,90 @@
+@use '../abstracts/mixins' as *;
+
+body.demo-modal-open {
+    overflow: hidden;
+}
+
+.smn-demo-modal {
+    box-sizing: border-box;
+    width: calc(100% - 32px);
+    max-width: 1300px;
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    // background-color: var(--wp--preset--color--secondary-100);
+    background-color: transparent;
+    overflow: auto;
+    overscroll-behavior: contain;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.65);
+    }
+
+    &__close {
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 0;
+        border-radius: var(--wp--custom--border-radius--rounded);
+        background-color: var(--wp--preset--color--background);
+        color: var(--wp--preset--color--foreground);
+        font-size: 28px;
+        line-height: 1;
+        cursor: pointer;
+
+        &:focus-visible {
+            outline: 2px solid var(--wp--preset--color--accent);
+            outline-offset: 2px;
+        }
+    }
+
+    &__content {
+        min-width: 0;
+
+        > :first-child {
+            margin-block-start: 0;
+        }
+
+        > :last-child {
+            margin-block-end: 0;
+        }
+
+        .wp-block-group[style*="min-width"] {
+            min-width: 0 !important;
+            flex-wrap: wrap !important;
+
+            > .wp-block-group {
+                flex: 1 1 100%;
+            }
+        }
+
+        .wpcf7-text,
+        .wpcf7-textarea,
+        .wpcf7-select {
+            border-color: var(--wp--preset--color--neutral-60);
+        }
+
+        .wpcf7-submit {
+            color: var(--wp--preset--color--background);
+        }
+    }
+
+    @media ($above-laptop) {
+        &__content .wp-block-group[style*="min-width"] {
+            flex-wrap: nowrap !important;
+
+            > .wp-block-group {
+                flex-basis: auto;
+            }
+        }
+    }
+}

@@ -1,10 +1,10 @@
 {
-  "name": "sumun-2026",
+  "name": "tcore",
   "version": "1.0.0",
-  "description": "Theme WP Sumun Hybrid 2026",
+  "description": "Smn FSE Starte Theme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SumunComunicacionGlobal/sumun-2026.git"
+    "url": "https://github.com/SumunComunicacionGlobal/_sumun-fse.git"
   },
   "keywords": [
     "sass",
@@ -14,23 +14,24 @@
   "author": "Sumun Comunicación Global",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SumunComunicacionGlobal/sumun-2026/issues"
+    "url": "https://github.com/SumunComunicacionGlobal/_sumun-fse/issues"
   },
-  "homepage": "https://github.com/SumunComunicacionGlobal/sumun-2026#readme",
+  "homepage": "https://github.com/SumunComunicacionGlobal/_sumun-fse#readme",
   "devDependencies": {
     "@wordpress/scripts": "^31.2.0",
     "@wordpress/stylelint-config": "^23.31.0",
     "dir-archiver": "^2.1.0",
+    "postcss-scss": "^4.0.9",
     "sass": "^1.97.3",
     "stylelint": "^16.9.0",
     "uglify-js": "^3.19.0"
   },
   "scripts": {
-    "watch": "sass --watch sass:./ --no-source-map --style compressed",
-    "compile:css": "sass sass:./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "compile:js": "uglifyjs assets/js/*.js > assets/js/sumun.min.js",
-    "bundle": "dir-archiver --src . --dest ../sumun.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock",
-    "sync": "browser-sync start --proxy 'https://sumun.local' --files ['**/*.php', '*.*']",
+    "watch": "sass --watch sass:./ custom-blocks:custom-blocks --source-map --style compressed",
+    "compile:css": "sass sass:./ custom-blocks:custom-blocks --source-map && stylelint 'sass/**/*.scss'",
+    "compile:js": "uglifyjs assets/js/smn.js --output assets/js/smn.min.js",
+    "bundle": "dir-archiver --src . --dest ../tcore.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock",
+    "sync": "browser-sync start --proxy 'https://tcore.local' --files ['**/*.php', '*.*']",
     "dev": "npm run watch & npm run sync"
   }
 }

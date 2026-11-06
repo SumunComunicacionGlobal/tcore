@@ -14,17 +14,19 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
+	font-family: var(--wp--preset--font-family--font-main);
+	font-size: var(--wp--preset--font-size--body);
 	border-radius: 0;
 	border: 0;
-	background-color: transparent;
-	line-height: 1;
-	padding: 12px var(--wp--preset--spacing--10);
+	line-height: var(--wp--custom--line-height--headings);
+	padding: .75rem var(--wp--preset--spacing--10);
 	width: 100%;
-	max-height: 3rem;
-	border-bottom: 1px solid;
+	border-radius: var(--wp--custom--border-radius--05);
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
 
 	&:focus {
-		//outline-color: var(--wp--preset--color--accent);
+		//outline-color: var(--wp--preset--color--primary);
 	}
 
 	&::placeholder {
@@ -49,19 +51,18 @@ select {
 	border-right-color: transparent;
 }
 
-textarea {
-	width: 100%;
-}
-
 button[type="submit"], input[type="submit"] {
-	background-color: var(--wp--preset--color--secondary);
-	border-color: var(--wp--preset--color--secondary);
-	border-radius: var(--wp--custom--border-radius--05);
+	cursor: pointer;
+	background-color: var(--wp--preset--color--accent);
+	border: 0;
+	border-color: var(--wp--preset--color--accent);
+	border-radius: var(--wp--custom--border-radius--rounded);
 	padding: calc(0.667em + 2px) calc(1.333em + 2px);
-	color: var(--wp--preset--color--black);
+	color: var(--wp--preset--color--black) !important;
 	font-weight: bold;
 	display: block;
 	width: 100%;
+	
 
 	&:disabled {
 		opacity: 0.5;
@@ -79,14 +80,5 @@ button[type="submit"], input[type="submit"] {
 		mask-size: cover;
 		mask-repeat: no-repeat;
 		transition: padding-left 0.3s ease;
-	}
-}
-
-.is-light {
-
-	button[type="submit"], input[type="submit"] {
-		background-color: var(--wp--preset--color--neutral-100);
-		border-color: var(--wp--preset--color--neutral-100);
-		color: var(--wp--preset--color--neutral-white);
 	}
 }

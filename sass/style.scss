@@ -1,15 +1,15 @@
 /*!
-Theme Name: Sumun 2026
+Theme Name: TCore
 Theme URI: https://sumun.net
-Author: Sumun
+Author: Sumun.net
 Author URI: https://sumun.net
-Description: Sumun Hybrid Theme 2026
-Version: 1.0.3
+Description: Smn FSE Theme
+Version: 0.0.0
 Tested up to: 8.2
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: sumun
+Text Domain: tefipro
 Tags: hybrid, sass, 
 
 This theme, like WordPress, is licensed under the GPL.
@@ -54,6 +54,7 @@ Use it to make something cool, have fun, and share what you've learned.
 @use "components/lists";
 @use "components/marquee";
 @use "components/media-text";
+@use "components/modal";
 @use "components/nav";
 @use "components/pagination";
 @use "components/query";
@@ -62,6 +63,8 @@ Use it to make something cool, have fun, and share what you've learned.
 @use "components/timeline";
 @use "components/mockup-web";
 @use "components/testimonios";
+@use "components/tabs";
+@use "components/separator";
 
 
 /*--------------------------------------------------------------

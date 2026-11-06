@@ -45,24 +45,31 @@
     padding: 0;
     margin: 0;
     display: flex;
-    gap: .5rem;
+    gap: var(--wp--custom--layout--gap-small);
     flex-wrap: wrap;
     
     li.cat-item {
         a {
             text-decoration: none;
             background-color: inherit;
+            border: 1px solid;
             border-radius: var(--wp--custom--border-radius--rounded);
-            color: var(--wp--preset--color--neutral-white);
-            padding: calc(0.5rem + 0px) 2rem;
+            color: var(--wp--preset--color--secondary-100);
+            padding: var(--wp--preset--spacing--05) var(--wp--preset--spacing--30);
             transition: all 0.2s ease-in-out;
             display: flex;
-            height: 2.5rem;
+            font-weight: 700;
+            font-size: 1rem;
 
             &:hover {
-                background-color: var(--wp--preset--color--terciary-50);
-                color: var(--wp--preset--color--neutral-white);
+                background-color: var(--wp--preset--color--secondary-30);
+                border-color: var(--wp--preset--color--secondary-30);
             }
+        }
+
+        &.is-term-filter-active a {
+            background-color: var(--wp--preset--color--secondary-100);
+            color: var(--wp--preset--color--neutral-white);
         }
     }
 }

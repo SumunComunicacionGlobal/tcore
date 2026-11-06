@@ -1,28 +1,34 @@
 @use '../abstracts/mixins' as *;
+.wpcf7-form {
 
-.wpcf7-acceptance .wpcf7-list-item {
-	margin: 0;
-}
-
-.wpcf7 .is-layout-flex {
-	gap: var(--wp--custom--layout--gap-small);
-
-	> * {
-		flex: 0 0 calc( 50% - var(--wp--custom--layout--gap-small) / 2 );
+	.wpcf7-acceptance .wpcf7-list-item {
+		margin: 0;
 	}
 
-	@media ($below-mobile) {
-		flex-direction: column;
+	.is-layout-flex {
+		gap: var(--wp--custom--layout--gap-small);
 
-		> *,
-		select {
-			flex: 0 0 100%;
-			width: 100%;
+		> * {
+			flex: 0 0 calc( 50% - var(--wp--custom--layout--gap-small) / 2 );
 		}
+
+		@media ($below-mobile) {
+			flex-direction: column;
+
+			> *,
+			select {
+				flex: 0 0 100%;
+				width: 100%;
+			}
+		}
+
 	}
 
-}
+	.contenido-pagina-wrapper {
+		display: none;
+	}
 
-.wpcf7 .contenido-pagina-wrapper {
-	display: none;
+	.wpcf7-response-output {
+		// background-color: var(--wp--preset--color--neutral-white);
+	}
 }

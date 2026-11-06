@@ -7,6 +7,10 @@
  * @return void
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Register custom blocks script
  */
@@ -19,14 +23,13 @@ function smn_register_blocks() {
         'render_callback' => 'smn_render_parent_title_block'] );
     
     // Carousel Block
-    register_block_type( get_stylesheet_directory() . '/custom-blocks/carousel', [
-        'render_callback' => ['Carousel_Slider_Block', 'render_carousel']
-    ]);
+    register_block_type( get_stylesheet_directory() . '/custom-blocks/carousel' );
     register_block_type( get_stylesheet_directory() . '/custom-blocks/slide');
 
+    // Desactivado en favor del nuevo bloque nativo
     // Tabs Block
-    register_block_type( get_stylesheet_directory() . '/custom-blocks/tabs');
-    register_block_type( get_stylesheet_directory() . '/custom-blocks/tab');
+    // register_block_type( get_stylesheet_directory() . '/custom-blocks/tabs');
+    // register_block_type( get_stylesheet_directory() . '/custom-blocks/tab');
 }
 
 add_action( 'init', 'smn_register_blocks' );

@@ -35,6 +35,6 @@
     },
     "shadow": true
   },
-  "textdomain": "sumun",
+  "textdomain": "tefipro",
   "editorScript": "file:./index.js"
 }

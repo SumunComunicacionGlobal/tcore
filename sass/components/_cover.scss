@@ -11,4 +11,8 @@
         background-repeat: no-repeat, no-repeat;
         background-size: auto, auto;
     }
+
+    .wp-block-post-content &:not(.alignfull) {
+        border-radius: var(--wp--custom--border-radius--1);
+    }
 }

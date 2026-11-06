@@ -1,3 +1,27 @@
 .home #hero {
     position: relative;
 }
+
+#footer,
+#hero,
+.hero {
+    min-height: 585px;
+    
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: var(--Secondary-100, #132139);
+        background-image: radial-gradient(67.11% 50.56% at 10.48% 79.07%, var(--wp-preset--color--accent, rgba(182, 221, 220, 0.20)) 0%, var(--wp-preset--color--secondary, rgba(43, 73, 127, 0.20)) 45.97%, var(--wp-preset--color--secondary, rgba(19, 33, 57, 0.20)) 100%), url('./assets/img/footer-pattern.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-position: 0 0, top right;
+    }
+
+    > .wp-block-cover__inner-container {
+        position: relative;
+        z-index: 1;
+    }
+}

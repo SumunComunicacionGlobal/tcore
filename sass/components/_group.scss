@@ -1,6 +1,10 @@
 @use '../abstracts/mixins' as *;
 
-.is-style-group-horizontal-scroll, .is-style-group-horizontal-scroll-btns {
+:root :where(.wp-block-post-content.is-layout-constrained) > .wp-block-group {
+    margin-block-start: 0 !important;
+}
+
+.is-style-group-horizontal-scroll, .is-style-group-horizontal-scroll--btns {
     padding: var(--wp--custom--layout--gap);
     gap: var(--wp--custom--layout--gap);
     display: flex;
@@ -58,9 +62,9 @@
     }
 }
 
-.wp-block-group.is-position-sticky {
-    top: calc(var(--wp--custom--layout--gap) + var(--wp-admin--admin-bar--position-offset, 0px))
-}
+// .wp-block-group.is-position-sticky {
+//     top: calc(var(--wp--custom--layout--gap) + var(--wp-admin--admin-bar--position-offset, 0px))
+// }
 
 .wp-block-group.is-style-margin-vertical {
     padding-top: var(--wp--preset--spacing--80);
@@ -101,6 +105,166 @@
             background-color: var(--wp--preset--color--secondary);
             border-color: var(--wp--preset--color--secondary);
             transform: rotate(90deg);
+        }
+    }
+}
+
+.wp-block-group.is-style-pattern-background {
+    background: url(./assets/img/bg-pattern.png) repeat center center;
+    background-size: 100px 100px !important;
+}
+
+.wp-block-group.is-style-timeline {
+    --timeline-cap-size: 60px;
+    --timeline-icon-size: 28px;
+    --timeline-number-size: 24px;
+    --timeline-branch-size: clamp(64px, 10vw, 112px);
+    --timeline-content-gap: clamp(24px, 4vw, 44px);
+
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) !important;
+    max-width: 1120px;
+    margin-inline: auto;
+    padding-block-start: calc(var(--timeline-cap-size) + 32px);
+    gap: 0;
+    isolation: isolate;
+    counter-reset: timeline;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset-block: var(--timeline-cap-size) 0;
+        inset-inline-start: calc(var(--timeline-cap-size) / 2);
+        width: 1px;
+        background-color: var(--wp--preset--color--secondary);
+        z-index: -1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        box-sizing: border-box;
+        width: var(--timeline-cap-size);
+        height: var(--timeline-cap-size);
+        border: 1px solid var(--wp--preset--color--neutral-80);
+        border-radius: 50%;
+        background: url(./assets/img/icono-tefipro.svg) no-repeat center;
+        background-size: var(--timeline-icon-size) auto;
+    }
+
+    > .wp-block-group {
+        position: relative;
+        box-sizing: border-box;
+        min-width: 0;
+        max-width: none;
+        margin: 0 !important;
+        padding-block: 16px;
+        padding-inline: calc(var(--timeline-cap-size) / 2 + 36px) 0;
+        counter-increment: timeline;
+
+        &::before {
+            content: counter(timeline);
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-start: calc((var(--timeline-cap-size) - var(--timeline-number-size)) / 2);
+            transform: translateY(-50%);
+            display: grid;
+            place-items: center;
+            box-sizing: border-box;
+            width: var(--timeline-number-size);
+            height: var(--timeline-number-size);
+            border: 4px solid var(--wp--preset--color--secondary-30);
+            border-radius: 50%;
+            background-color: var(--wp--preset--color--secondary);
+            color: var(--wp--preset--color--background);
+            font-family: 'SF Mono', monospace;
+            font-size: 12px;
+            line-height: 1;
+            z-index: 1;
+        }
+
+        > * {
+            min-width: 0;
+            overflow-wrap: anywhere;
+        }
+
+        > :first-child {
+            margin-block-start: 0;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        > * + * {
+            margin-block-start: 16px;
+        }
+
+        > :last-child {
+            margin-block-end: 0;
+        }
+    }
+
+    @media ($above-mobile) {
+        --timeline-cap-size: 120px;
+        --timeline-icon-size: 56px;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        &::before {
+            inset-inline-start: 50%;
+        }
+
+        &::after {
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+
+        > .wp-block-group {
+            grid-column: 1 / -1;
+            width: 50%;
+            padding-inline: 0 calc(var(--timeline-branch-size) + var(--timeline-number-size) + var(--timeline-content-gap));
+
+            &::before {
+                inset-inline-start: auto;
+                inset-inline-end: var(--timeline-branch-size);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset-block-start: 50%;
+                inset-inline-end: -3px;
+                transform: translateY(-50%);
+                width: calc(var(--timeline-branch-size) + var(--timeline-number-size) / 2 + 6px);
+                height: 6px;
+                background: url(./assets/img/timeline-connector.svg) no-repeat center / 100% 100%;
+            }
+
+            &:nth-child(even) {
+                margin-inline-start: auto !important;
+                padding-inline: calc(var(--timeline-branch-size) + var(--timeline-number-size) + var(--timeline-content-gap)) 0;
+
+                &::before {
+                    inset-inline-start: var(--timeline-branch-size);
+                    inset-inline-end: auto;
+                }
+
+                &::after {
+                    inset-inline-start: -3px;
+                    inset-inline-end: auto;
+                }
+            }
+
+            &:last-child {
+                padding-block-end: 80px;
+
+                &::before,
+                &::after {
+                    inset-block-start: calc((100% - 64px) / 2);
+                }
+            }
         }
     }
 }

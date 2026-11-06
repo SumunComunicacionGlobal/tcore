@@ -1,6 +1,9 @@
 @use '../abstracts/mixins' as *;
 
 .wp-block-quote {
+    border-color: var(--wp--preset--color--accent-80);
+    padding-left: var(--wp--custom--layout--gap);
+    max-width: 700px;
     
     &.is-style-quote-card {
         border: 1px solid;
@@ -8,7 +11,7 @@
         display: flex;
         flex-direction: column;
         gap: 0;
-        background-color: var(--wp--preset--color--background);
+        background-color: var(--wp--preset--color--neutral-100);
 
         cite {
             margin-top: 0;

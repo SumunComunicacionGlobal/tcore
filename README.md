@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
-Sumun Hybrid
+Smn FSE
 ===
 
-Hi. I'm a starter theme called `sumun`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Hi. I'm a starter theme called `smn`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
 The ultra-minimal SCSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
 
@@ -24,18 +24,18 @@ Installation
 
 ### Requirements
 
-`sumun` requires the following dependencies:
+`smn` requires the following dependencies:
 
 - [Node.js](https://nodejs.org/)
 - [Composer](https://getcomposer.org/)
 
 ### Quick Start
 
-1. Search for `'sumun'` (inside single quotations) to capture the text domain and replace with: `'your-theme-name'`.
+1. Search for `'smn'` (inside single quotations) to capture the text domain and replace with: `'your-theme-name'`.
 
 ### Setup
 
-To start using all the tools that come with `sumun`  you need to install the necessary Node.js and Composer dependencies :
+To start using all the tools that come with `smn`  you need to install the necessary Node.js and Composer dependencies :
 
 ```sh
 $ composer install
@@ -44,7 +44,7 @@ $ npm install
 
 ### Available CLI commands
 
-`sumun` comes packed with CLI commands tailored for WordPress theme development :
+`smn` comes packed with CLI commands tailored for WordPress theme development :
 
 - `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
 - `composer lint:php` : checks all PHP files for syntax errors.
@@ -52,12 +52,12 @@ $ npm install
 - `npm run compile:js` : compiles JS files to min.js.
 - `npm run watch` : watches all SASS files and recompiles them to css when they change.
 - `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
-- `npm run sync` : Browser syncs listen all files. Maybe you have to change the port. By default: `localhost:8888/sumun/`.
+- `npm run sync` : Browser syncs listen all files. Maybe you have to change the port. By default: `localhost:8888/smn/`.
 - `npm run dev` : Run watch and sync to develop your awesome theme.
 
 ### Theme.json
 
-Recuerda que `sumun` es un starter theme para versiones superiores a 6.0 de WordPress y trae incorporado el archivo `theme.json` para poder configurar, dar estilos y muchas mas opciones. Consulta en: [Global Settings & Styles (theme.json)](https://developer.wordpress.org/block-editor/how-to-guides/themes/global-settings-and-styles/).
+Recuerda que `smn` es un starter theme para versiones superiores a 6.0 de WordPress y trae incorporado el archivo `theme.json` para poder configurar, dar estilos y muchas mas opciones. Consulta en: [Global Settings & Styles (theme.json)](https://developer.wordpress.org/block-editor/how-to-guides/themes/global-settings-and-styles/).
 
 Sigue estos sencillos pasos para empezar a configurar el editor de tu theme y las correspondencias en el frontend.
 

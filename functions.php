@@ -4,11 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package sumun
+ * @package smn
  */
 
-define("PORTFOLIO_LIST_ID", 15403);
-define("CONTACTO_ID", 21400);
 
 
 if ( ! function_exists( 'smn_styles' ) ) :
@@ -57,40 +55,14 @@ require get_template_directory() . '/inc/smn_shortcodes.php';
 // Admin functions
 require get_template_directory() . '/inc/smn_admin-functions.php';
 
-// Analitica
-require get_template_directory() . '/inc/smn_analitica.php';
-
-// Schema
-require get_template_directory() . '/inc/smn_schema.php';
-
 // Hooks
 require get_template_directory() . '/inc/smn_hooks.php';
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
+// Block theme support and editor styles
 require get_template_directory() . '/inc/template-functions.php';
 
-/**
- * Register widget area.
- */
-require get_template_directory() . '/inc/smn_widget-area.php';
+// Custom Post Type and Taxonomy registration
+require get_template_directory() . '/inc/smn_post-types.php';
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-
-// Testing block theme functionality in a classic theme
-//include_once get_template_directory() . '/functions-hybrid.php';
+// Icon collection
+require get_template_directory() . '/inc/smn_icons.php';
