@@ -107,6 +107,7 @@ function smn_render_custom_field_paragraph( $block_content, $block, $instance ) 
     if ( ! is_scalar( $value ) ) {
         return $block_content;
     }
+    $value = html_entity_decode( (string) $value, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
 
     $document = new DOMDocument( '1.0', 'UTF-8' );
     $previous_errors = libxml_use_internal_errors( true );
@@ -121,9 +122,11 @@ function smn_render_custom_field_paragraph( $block_content, $block, $instance ) 
     while ( $paragraph->firstChild ) {
         $paragraph->removeChild( $paragraph->firstChild );
     }
-    $paragraph->appendChild( $document->createTextNode( (string) $value ) );
+    $paragraph->appendChild( $document->createTextNode( $value ) );
     if ( 'precio' === $field_name ) {
-        $paragraph->nodeValue .= "&nbsp;€";
+        if ( strpos( $value, '€' ) === false ) {
+            $paragraph->appendChild( $document->createTextNode( "\u{00A0}€/mes" ) );
+        }
     }
 
 

@@ -66,3 +66,39 @@
     }
 
 }
+
+.is-style-grid-ilustracion-central {
+
+    @media ($above-mobile-xs) {
+        > *:not(:first-child) {
+            position: absolute;
+            max-width: 33%;
+        }
+
+        > *:nth-child(2n+2) {
+            left: 0;
+            text-align: right;
+            align-items: flex-end;
+        }
+
+        > *:nth-child(2n+3) {
+            right: 0;
+        }
+
+        > *:nth-child(2),
+        > *:nth-child(3) {
+            top: 0;
+        }
+
+        > *:nth-child(4),
+        > *:nth-child(5) {
+            bottom: 0;
+        }
+
+    }
+
+    @media ( $below-mobile-xs) {
+
+    }
+
+}

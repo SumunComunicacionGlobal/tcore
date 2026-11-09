@@ -56,11 +56,11 @@
     
 }
 
-.wp-block-group.is-layout-grid {
-    @media ($below-mobile) {
-        grid-template-columns: 1fr;
-    }
-}
+// .wp-block-group.is-layout-grid {
+//     @media ($below-mobile) {
+//         grid-template-columns: 1fr;
+//     }
+// }
 
 // .wp-block-group.is-position-sticky {
 //     top: calc(var(--wp--custom--layout--gap) + var(--wp-admin--admin-bar--position-offset, 0px))
@@ -87,7 +87,7 @@
             width: 56px;
             height: 56px;
             background-color: var(--wp--preset--color--neutral-60);
-            mask-image: url(./assets/icons/IconOutlineArrow.svg);
+            mask-image: url(./assets/icons-collection/IconOutlineArrow.svg);
             mask-size: contain;
             mask-repeat: no-repeat;
             mask-position: center;

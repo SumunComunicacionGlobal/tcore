@@ -76,7 +76,7 @@ button[type="submit"], input[type="submit"] {
 		height: 24px;
 		margin-left: .5rem;
 		background-color: currentColor; /* Esto asegura que el color del SVG coincida con el color del texto */
-		mask-image: url(./assets/icons/arrow-right.svg);
+		mask-image: url(./assets/icons-collection/arrow-right.svg);
 		mask-size: cover;
 		mask-repeat: no-repeat;
 		transition: padding-left 0.3s ease;

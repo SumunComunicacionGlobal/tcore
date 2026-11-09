@@ -5,13 +5,6 @@
         }
     }
 
-    .wp-block-cover__background.has-secondary-background-color {
-        background-image: url('./assets/icons/chevrons-yellow.svg'), url('./assets/icons/s-yellow.svg');
-        background-position: left bottom, right top;
-        background-repeat: no-repeat, no-repeat;
-        background-size: auto, auto;
-    }
-
     .wp-block-post-content &:not(.alignfull) {
         border-radius: var(--wp--custom--border-radius--1);
     }
