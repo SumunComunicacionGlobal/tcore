@@ -1,10 +1,14 @@
+b,
+strong { 
+    font-weight: 700;
+}
+
 .wp-block-post-title a {
 	text-decoration: none;
 }
 
 [class*="has-heading-"][class*="-font-size"],
-.has-caption-font-size,
-.has-small-font-size {
+.has-caption-font-size {
     line-height: var(--wp--custom--line-height--headings);
 }
 .has-caption-font-size {
@@ -19,12 +23,9 @@
     font-weight: 900;
 }
 
-.has-medium-font-size {
-    line-height: var(--wp--custom--line-height--headings);
-}
-
 .has-display-font-size {
     line-height: var(--wp--custom--line-height--tiny) !important;
+    font-weight: 400;
 }
 
 .has-white-background-color {

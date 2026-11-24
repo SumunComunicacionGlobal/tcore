@@ -1,7 +1,9 @@
 @use '../abstracts/mixins' as *;
 
-a.stretched-link, .stretched-link > a {
+a.stretched-link, .stretched-link > a,
+[class*="is-style-card"] .wp-block-post-title a {
     position: initial !important;
+    color: var(--wp--preset--color--foreground);
 
     &::after {
         position: absolute;
@@ -13,7 +15,12 @@ a.stretched-link, .stretched-link > a {
         pointer-events: auto;
         content: "";
         background-color: rgba(0,0,0,0);
+        transition: background-color .3s ease-in-out;
     } 
+
+    &:hover::after {
+        background-color: rgba(0,0,0,0.05);
+    }
 }
 
 .column-reverse-mobile {
@@ -84,4 +91,8 @@ a.stretched-link, .stretched-link > a {
     :where(:not(#masthead)) .blur-background {
         backdrop-filter: blur(8px);
     }
+}
+
+.bg-blur {
+    backdrop-filter: blur(8px);
 }

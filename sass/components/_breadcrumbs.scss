@@ -1,7 +1,8 @@
 .rank-math-breadcrumb,
 .breadcrumb {
-    font-size: var(--wp--preset--font-size--small);
+    font-size: var(--wp--preset--font-size--caption);
     font-family: var(--wp--preset--font-family--font-mono);
+    text-transform: uppercase;
 
     a {
         text-decoration: none;

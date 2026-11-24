@@ -7,12 +7,23 @@
     border: 1px solid;
 
     &:not(.has-border-color) {
-        border-color: var(--wp--preset--color--secondary-30);
+        border-color: var(--wp--preset--color--neutral-30);
     }
 }
+.is-style-card-small {
+    border-radius: var(--wp--custom--border-radius--05);
+}
+
 .is-style-card-small,
 .wp-block-paragraph.has-background:not(.is-style-badge) {
     padding: var(--wp--custom--layout--gap-small);
+}
+.is-layout-grid {
+
+    .is-style-card,
+    .is-style-card-small {
+        min-height: 100%;
+    }
 }
 .card-arrow {
 
