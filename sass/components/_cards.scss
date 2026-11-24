@@ -8,6 +8,10 @@
 
     &:not(.has-border-color) {
         border-color: var(--wp--preset--color--neutral-30);
+
+        .wp-block-cover & {
+            border-color: rgba(255,255,255,.1);
+        }
     }
 }
 .is-style-card-small {
