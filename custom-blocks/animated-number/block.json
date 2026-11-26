@@ -1,0 +1,55 @@
+{
+  "apiVersion": 2,
+  "name": "smn/animated-number",
+  "title": "Número animado",
+  "category": "widgets",
+  "icon": "image-filter",
+  "description": "Muestra un número que se anima al entrar en el viewport.",
+  "attributes": {
+    "number": {
+      "type": "string",
+      "default": "0"
+    },
+    "prefix": {
+      "type": "string",
+      "default": ""
+    },
+    "suffix": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "padding": true
+    },
+    "typography": {
+      "fontSize": true,
+      "fontFamily": true,
+      "fontWeight": true,
+      "lineHeight": true,
+      "letterSpacing": true,
+      "textAlign": true
+    },
+    "__experimentalBorder": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true,
+        "__experimentalDefaultControls": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "shadow": true
+  },
+  "textdomain": "infinitia",
+  "editorScript": "file:./index.js"
+}

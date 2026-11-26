@@ -26,6 +26,12 @@ function smn_register_blocks() {
     register_block_type( get_stylesheet_directory() . '/custom-blocks/carousel' );
     register_block_type( get_stylesheet_directory() . '/custom-blocks/slide');
 
+    // Animated Number Block
+    require_once get_stylesheet_directory() . '/custom-blocks/animated-number/animated-number.php';
+    register_block_type( get_stylesheet_directory() . '/custom-blocks/animated-number', [
+        'render_callback' => 'smn_render_animated_number_block',
+    ] );
+
     // Desactivado en favor del nuevo bloque nativo
     // Tabs Block
     // register_block_type( get_stylesheet_directory() . '/custom-blocks/tabs');

@@ -88,6 +88,16 @@
 					"name": "Neutral overlay",
 					"slug": "neutral-overlay",
 					"gradient": "linear-gradient(180deg, rgba(14, 19, 30, 0.06) 0%, var(--Neutral-100, rgba(14, 19, 30, 0.70)) 100%)"
+				},
+				{
+					"name": "Secondary 10 and white",
+					"slug": "secondary-10-white",
+					"gradient": "linear-gradient(180deg, var(--wp--preset--color--secondary-10, #EAEDF2) 0%, var(--wp--preset--color--secondary-10, #EAEDF2) 10%, var(--wp--preset--color--neutral-white) 10.01%, var(--wp--preset--color--secondary-10) 100%)"
+				},
+				{
+					"name": "Secondary 100 and white",
+					"slug": "secondary-100-white",
+					"gradient": "linear-gradient(180deg, var(--wp--preset--color--secondary-100, #132139) 0%, var(--wp--preset--color--secondary-100, #132139) 30%, var(--wp--preset--color--neutral-white) 30%, var(--wp--preset--color--neutral-white) 100%)"
 				}
 			],
 			"link": true,
