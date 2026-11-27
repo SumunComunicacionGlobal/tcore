@@ -385,7 +385,7 @@
 							"fontFamily": "Satoshi-Variable, system-ui, sans-serif",
 							"fontStretch": "normal",
 							"fontStyle": "normal",
-							"fontWeight": "300 900",
+							"fontWeight": "300 400 500 700 900",
 							"src": [
 								"file:./assets/fonts/Satoshi-Variable.woff2",
 								"file:./assets/fonts/Satoshi-Variable.woff",
@@ -576,7 +576,7 @@
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--font-main)",
 					"fontSize": "1rem",
-					"fontWeight": "700",
+					"fontWeight": "400",
 					"lineHeight": "var(--wp--custom--line-height--normal)"
 				}
 			},
@@ -594,12 +594,13 @@
 			},
 			"h1": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--heading-1)"
+					"fontSize": "var(--wp--preset--font-size--heading-1)",
+					"fontWeight": "400"
 				}
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--heading-2)"
+					"fontSize": "var(--wp--preset--font-size--heading-2)",
 				}
 			},
 			"h3": {
