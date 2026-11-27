@@ -51,7 +51,7 @@ function theme_gsap_script(){
     wp_enqueue_script( 'gsap-js2', get_template_directory_uri() . '/assets/js/gsap.js', array('gsap-js', 'gsap-st'), false, true );
 }
 
-// add_action( 'wp_enqueue_scripts', 'theme_gsap_script' );
+add_action( 'wp_enqueue_scripts', 'theme_gsap_script' );
 
 
 
