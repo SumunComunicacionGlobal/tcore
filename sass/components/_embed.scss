@@ -1,5 +1,12 @@
-.wp-block-embed {
+.wp-block-embed,
+iframe {
     border-radius: var(--wp--custom--border-radius--1);
     overflow: hidden;
     max-width: 960px;
+}
+
+iframe[src*="embed.aspx"] {
+    aspect-ratio: 16 / 9;
+    margin-left:  auto;
+    margin-right: auto;
 }
