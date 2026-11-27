@@ -4,7 +4,7 @@ img {
     display: block;
 }
 
-.wp-block-image:not(.is-style-no-radius) img {
+.wp-block-image:not(.is-style-no-radius) img:not(src*=".svg") {
     border-radius: var(--wp--custom--border-radius--1);
 }
 
