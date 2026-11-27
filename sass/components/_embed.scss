@@ -1,8 +1,10 @@
 .wp-block-embed,
 iframe {
+    display: block;
     border-radius: var(--wp--custom--border-radius--1);
     overflow: hidden;
-    max-width: 960px;
+    max-width: 960px !important;
+    height: auto;
 }
 
 iframe[src*="embed.aspx"] {
