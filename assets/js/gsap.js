@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 document.addEventListener('DOMContentLoaded', function () {
 
     // Animar elementos con la clase .animate al entrar en el viewport
-    gsap.utils.toArray('main .wp-block-cover__inner-container > * > *, main .is-layout-flow > * > *, .wp-block-heading, #colophon, .is-style-timeline > *').forEach(function (element) {
+    gsap.utils.toArray('main .wp-block-cover__inner-container > * > *, section.wp-block-template-part .wp-block-cover__inner-container > * > * , main .is-layout-flow > * > *, .wp-block-heading, #colophon, .is-style-timeline > *').forEach(function (element) {
         gsap.from(element, {
             scrollTrigger: {
                 trigger: element, // Elemento que activa la animación
