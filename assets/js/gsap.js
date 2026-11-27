@@ -1,6 +1,7 @@
+// Registrar ScrollTrigger antes de crear animaciones que lo utilizan.
+gsap.registerPlugin(ScrollTrigger);
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Registrar el plugin ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
 
     // Animar elementos con la clase .animate al entrar en el viewport
     gsap.utils.toArray('.wp-block-cover__inner-container > * > *, .is-layout-flow > * > *, .wp-block-separator, #colophon, .grid-productos > *').forEach(function (element) {
@@ -17,3 +18,50 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+const triggerSection = document.querySelector('#kpis-section');
+const elements = document.querySelectorAll('.animated-number');
+
+    if (triggerSection && elements.length > 0) {
+        gsap.from(elements, {
+        textContent: 0,
+        duration: 2,
+        snap: { textContent: 1 },
+        scrollTrigger: {
+            trigger: triggerSection,
+            start: 'top center',
+        },
+        });
+    }
+
+
+  // Efecto parallax + scale suave para fondo de covers.
+  gsap.utils.toArray('.bg-scroll-animated .wp-block-cover').forEach(function (cover) {
+    const bgImage = cover.querySelector('.wp-block-cover__image-background');
+
+    if (!bgImage) {
+      return;
+    }
+
+    gsap.set(bgImage, {
+      scale: 1,
+      yPercent: -4,
+      transformOrigin: '50% 50%',
+      willChange: 'transform',
+    });
+
+    gsap.to(bgImage, {
+      scale: 1.20,
+      yPercent: 7,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: cover,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1.2,
+        invalidateOnRefresh: true,
+      },
+    });
+  });
+
